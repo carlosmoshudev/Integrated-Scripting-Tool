@@ -1,48 +1,56 @@
 <script lang="ts">
 	export let links: { Text: string; Route: string; FaIcon: string }[] = [];
-	import { page } from '$app/stores';
-	import logo_trison from '/logo_white.png';
+	import { page, getStores } from '$app/stores';
+
+	getStores().page.subscribe((value) => {
+		console.log(value);
+	});
 </script>
 
-<header>
+<div class="header">
+	<div class="logo">
+		<img src="/logo_white.png" alt="Trison" />
+	</div>
+
 	<ul>
-		<li>
-			<div class="logo">
-				<img src={logo_trison} alt="Trison" />
-			</div>
-		</li>
-		<li>
-			<p>TRISON Integrated Scripting Tool</p>
-		</li>
 		{#each links as link}
-			<li aria-current={$page.url.pathname === link.Route ? 'page' : undefined}>
-				<a href={link.Route} class="header-link">
+			<li>
+				<a
+					href={link.Route}
+					class="animated__underline"
+					aria-current={$page.url.pathname === link.Route ? 'page' : undefined}
+				>
 					<i class={'fas ' + link.FaIcon} />
 					{link.Text}
 				</a>
 			</li>
 		{/each}
 	</ul>
-</header>
+	<div class="menu__button">
+		<i class="fas fa-bars" />
+	</div>
+</div>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-
 	* {
 		box-sizing: border-box;
 	}
 
-	ul {
+	.header {
+		display: flex;
 		background-image: linear-gradient(90deg, #ff6060 0%, #ff8989 50%, #ff6060 100%);
 		font-family: 'Montserrat', sans-serif;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0.5rem 0 1rem 0;
+	}
+	ul {
 		display: flex;
-		list-style: none;
-		padding: 0.5rem 2.5rem;
 		margin: 0;
 		height: 100%;
-		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: space-between;
+		list-style: none;
 	}
 
 	li {
@@ -51,30 +59,8 @@
 		height: 100%;
 	}
 
-	li[aria-current='page'] {
-		border-radius: 0.25rem;
-		border-bottom: 2px solid #ff6060bb;
-	}
-
-	li[aria-current='page']::before {
-		content: '';
-		margin-right: 0.5rem;
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: -1rem;
-		left: calc(50% - 6px);
-		border: 6px solid transparent;
-		border-top: 6px solid #ff8989;
-	}
-
-	.header-link {
-		color: #fff;
-		text-decoration: none;
-	}
-
-	.header-link:hover {
-		color: #ff6060;
+	a[aria-current='page'] {
+		border-bottom: 2px solid #fff;
 	}
 
 	.logo {
@@ -87,28 +73,67 @@
 		height: 100%;
 	}
 
-	p {
-		color: #fff;
-		font-size: 1rem;
-		font-weight: 600;
-	}
-
 	i {
 		margin-right: 0.5rem;
 	}
+
+	.animated__underline {
+		position: relative;
+		color: #fff;
+		text-decoration: none;
+		padding: 0.5rem 0;
+	}
+
+	.animated__underline::after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		bottom: 0;
+		left: 0;
+		transition: transform 0.3s ease;
+		transform: scaleX(0);
+	}
+
+	.animated__underline:hover::after {
+		transform: scaleX(1);
+	}
+
+	.menu__button {
+		cursor: pointer;
+	}
+
+	.menu__button i {
+		font-size: 1.5rem;
+		color: #fff;
+	}
+
 	@media (max-width: 768px) {
+		.header {
+			flex-direction: column;
+			padding: 0.5rem 0 1rem 0;
+		}
+
 		ul {
 			flex-direction: column;
-			align-items: flex-start;
+			align-items: center;
+			width: 100%;
+			padding: 0;
 		}
 
 		li {
-			margin-right: 0;
-			margin-bottom: 0.5rem;
+			margin: 0.5rem 0;
 		}
 
-		li[aria-current='page']::before {
-			top: -0.5rem;
+		.menu__button {
+			display: block;
+			cursor: pointer;
+		}
+
+		.menu__button i {
+			font-size: 1.5rem;
+			color: #fff;
 		}
 	}
 </style>

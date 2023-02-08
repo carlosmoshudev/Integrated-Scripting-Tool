@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lamg="ts">
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		if (localStorage.getItem('token')) {
+			location.href = '/av-api-rest';
+		} else {
+			location.href = '/login';
+		}
+	});
+</script>
+
+<h1>Redirecting...</h1>
