@@ -1,5 +1,3 @@
-import type { IUserLoginData } from '../types/types';
-
 type res = {
 	result: string;
 };
@@ -45,3 +43,26 @@ export async function TryLogin(username: string, password: string) {
 		console.log(window.localStorage);
 	});
 }
+
+export async function GetZabbixUserInfo() {
+	return fetch('http://20.229.182.95:9080/api_jsonrpc.php', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			jsonrpc: '2.0',
+			method: 'user.get',
+			params: {
+				output: ['username', 'name', 'surname', 'attempt_ip'],
+				selectMedias: ['sendto'],
+				selectUsrgrps: ['name'],
+				selectRole: ['name']
+			},
+			auth: localStorage.getItem('token'),
+			id: 1
+		})
+	}).then((response) => response.json());
+}
+
+export default { TryLogin, GetZabbixUserInfo };

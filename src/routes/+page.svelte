@@ -3,7 +3,7 @@
 
 	onMount(() => {
 		if (localStorage.getItem('token')) {
-			location.href = '/av-api-rest';
+			location.href = '/profile';
 		} else {
 			location.href = '/login';
 		}
