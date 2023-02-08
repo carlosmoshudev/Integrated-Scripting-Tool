@@ -1,6 +1,7 @@
 <script lang="ts">
-	export let links: { Text: string; Route: string; FaIcon: string }[] = [];
+	export let links: HeaderNavLink[];
 	import { page, getStores } from '$app/stores';
+	import type { HeaderNavLink } from '../../types/types';
 
 	getStores().page.subscribe((value) => {
 		console.log(value);
@@ -16,12 +17,12 @@
 		{#each links as link}
 			<li>
 				<a
-					href={link.Route}
+					href={link.href}
 					class="animated__underline"
-					aria-current={$page.url.pathname === link.Route ? 'page' : undefined}
+					aria-current={$page.url.pathname === link.href ? 'page' : undefined}
 				>
-					<i class={'fas ' + link.FaIcon} />
-					{link.Text}
+					<i class={'fas ' + link.icon} />
+					{link.title}
 				</a>
 			</li>
 		{/each}

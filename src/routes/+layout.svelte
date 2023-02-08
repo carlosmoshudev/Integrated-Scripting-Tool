@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MainLayoutHeader from '../Components/layout/MainLayoutHeader.svelte';
+	import MainLayoutHeader from '../components/layout/main-layout-header.svelte';
 	import { headerLinks } from '../models/header';
 	import '../styles/root.css';
 	import '../styles/fonts.css';
