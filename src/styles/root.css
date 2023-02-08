@@ -17,10 +17,18 @@ main {
 header {
 	width: 102%;
 	margin-left: -1%;
-	margin-top: -0.5%;
+	margin-top: -0.7%;
 	height: 3rem;
 }
 
 ::-webkit-scrollbar {
 	height: 0;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
 }

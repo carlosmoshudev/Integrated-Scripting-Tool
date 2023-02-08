@@ -1,7 +1,14 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { TryLogin } from '../../services/login';
+
+	onMount(() => {
+		if (localStorage.getItem('token')) {
+			location.href = '/';
+		}
+	});
+
 	async function loginEvent() {
-		// get the inputed text on input fields
 		const username = document.getElementById('u') as HTMLInputElement;
 		const password = document.getElementById('p') as HTMLInputElement;
 		TryLogin(username.value, password.value).then(() => {

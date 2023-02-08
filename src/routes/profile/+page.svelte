@@ -31,7 +31,7 @@
 				});
 			});
 		} else {
-			location.href = '/login';
+			location.href = '/';
 		}
 	});
 </script>
