@@ -21,7 +21,7 @@ async function GetZabbixToken(username: string, password: string): Promise<res> 
 	}).then((response) => response.json());
 }
 
-function cypherPassword(password: string): string {
+function cypherPassword(password: string, username: string, zabbix: boolean): string {
 	let cypheredPassword = '';
 	for (let i = 0; i < password.length; i++) {
 		const cypheredChar = password.charCodeAt(i) + 1;
@@ -29,13 +29,15 @@ function cypherPassword(password: string): string {
 		const thirdCypheredChar = password.charCodeAt(i) + 3;
 		cypheredPassword += String.fromCharCode(cypheredChar, secondCypheredChar, thirdCypheredChar);
 	}
-	cypheredPassword = btoa(cypheredPassword);
+	const zabbixLogged = zabbix ? '1' : '0';
+	cypheredPassword = `${zabbixLogged}_${btoa(cypheredPassword)}_${btoa(username)};`;
 	return cypheredPassword;
 }
 
 export async function TryLogin(username: string, password: string) {
 	await GetZabbixToken(username, password).then((response) => {
-		const cookie = cypherPassword(password + username);
+		const isLoggedInZabbix = response.result !== undefined ? true : false;
+		const cookie = cypherPassword(password, username, isLoggedInZabbix);
 		localStorage.clear();
 		localStorage.setItem('token', response.result);
 		localStorage.setItem('username', username);
