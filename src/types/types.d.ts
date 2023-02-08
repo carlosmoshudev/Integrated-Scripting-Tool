@@ -4,3 +4,9 @@ export type HeaderNavLink = {
 	icon: string;
 	isExternal?: boolean;
 };
+
+export interface IUserLoginData {
+	username: string;
+	cypherPassword: string;
+	zabbixToken: string;
+}
