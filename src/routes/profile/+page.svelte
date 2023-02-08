@@ -38,7 +38,6 @@
 
 <section>
 	<h1>Perfil de {userdata.name}</h1>
-
 	<fieldset>
 		<legend>Información de usuario</legend>
 		<p>Nombre completo: {userdata.name} {userdata.surname}</p>
@@ -46,6 +45,12 @@
 		<p>Email: {userdata.email}</p>
 		<p>Grupos: {userdata.userGroups.map((group) => group.name)}</p>
 		<p>Rol: {userdata.role}</p>
+	</fieldset>
+	<fieldset>
+		<legend>Información de sesión</legend>
+		<p>Nombre de usuario: {userdata.username}</p>
+		<p>Token de Zabbix: {userdata.zabbixToken}</p>
+		<p>Cookie de Sesión: {userdata.cookie}</p>
 	</fieldset>
 </section>
 
@@ -57,29 +62,28 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 	}
 	fieldset {
 		border: 1px solid #ccc;
 		border-radius: 5px;
-		padding: 10px;
-		max-width: 500px;
-		align-self: center;
+		padding: 40px;
+		min-width: 1090px;
+		align-items: center;
+		justify-content: center;
 	}
 
 	legend {
 		font-size: 1.2em;
 		font-weight: bold;
+		margin: 0 0 0 50px;
 	}
 
 	p {
-		margin: 0;
+		margin: 10px 0;
 	}
 
 	h1 {
 		font-size: 1.5em;
-	}
-
-	h2 {
-		font-size: 1.2em;
 	}
 </style>
