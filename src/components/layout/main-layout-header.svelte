@@ -1,19 +1,16 @@
 <script lang="ts">
 	export let links: HeaderNavLink[];
-	import { page, getStores } from '$app/stores';
+	import { page } from '$app/stores';
 	import type { HeaderNavLink } from '../../types/types';
 
-	getStores().page.subscribe((value) => {
-		console.log(value);
-	});
+	let menuIcon = 'fa-bars';
 </script>
 
 <div class="header">
 	<div class="logo">
 		<img src="/logo_white.png" alt="Trison" />
 	</div>
-
-	<ul>
+	<ul class="nav__links">
 		{#each links as link}
 			<li>
 				<a
@@ -27,10 +24,67 @@
 			</li>
 		{/each}
 	</ul>
-	<div class="menu__button">
-		<i class="fas fa-bars" />
+	<div
+		class="menu__button"
+		on:click={(e) => {
+			if (menuIcon === 'fa-bars') {
+				menuIcon = 'fa-times';
+			} else {
+				menuIcon = 'fa-bars';
+			}
+		}}
+		on:keyup={() => {}}
+	>
+		<i class="fas {menuIcon}" />
 	</div>
 </div>
+{#if menuIcon === 'fa-times'}
+	<div class="conditional_menu">
+		<ul class="menu__links">
+			{#if !localStorage.getItem('token')}
+				<li>
+					<a href="/login" class="animated__underline">
+						<i class="fas fa-sign-in-alt" />
+						Login
+					</a>
+				</li>
+				<li>
+					<a href="/register" class="animated__underline">
+						<i class="fas fa-user-plus" />
+						Register
+					</a>
+				</li>
+			{:else}
+				<li>
+					<a href="/logout" class="animated__underline">
+						<i class="fas fa-sign-out-alt" />
+						Logout
+					</a>
+				</li>
+				<li class="separator" />
+				<li>
+					<a href="/profile" class="animated__underline">
+						<i class="fas fa-user" />
+						Profile
+					</a>
+				</li>
+				<li>
+					<a href="/settings" class="animated__underline">
+						<i class="fas fa-cog" />
+						Settings
+					</a>
+				</li>
+				<li class="separator" />
+				<li>
+					<a href="/load-script" class="animated__underline">
+						<i class="fas fa-file-code" />
+						Load Script
+					</a>
+				</li>
+			{/if}
+		</ul>
+	</div>
+{/if}
 
 <style>
 	* {
@@ -43,9 +97,9 @@
 		font-family: 'Montserrat', sans-serif;
 		justify-content: space-around;
 		align-items: center;
-		padding: 0.5rem 0 1rem 0;
+		padding: 1rem 0 1rem 0;
 	}
-	ul {
+	.nav__links {
 		display: flex;
 		margin: 0;
 		height: 100%;
@@ -55,7 +109,7 @@
 	}
 
 	li {
-		margin-right: 1rem;
+		margin-right: 2rem;
 		position: relative;
 		height: 100%;
 	}
@@ -110,6 +164,51 @@
 		color: #fff;
 	}
 
+	.conditional_menu {
+		position: absolute;
+		top: 48px;
+		right: 0;
+		display: block;
+		flex-direction: row;
+		justify-content: center;
+		background-attachment: fixed;
+		background-image: linear-gradient(90deg, #ff6060 0%, #ff8989 50%, #ff6060 100%);
+		font-family: 'Montserrat', sans-serif;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0.5rem 0 1rem 0;
+		max-width: 300px;
+	}
+
+	.menu__links {
+		margin: 0;
+		height: 100%;
+		justify-content: space-between;
+		align-items: space-between;
+		list-style: none;
+	}
+
+	.menu__links i {
+		margin-right: 0.5rem;
+	}
+
+	.menu__links a {
+		color: #fff;
+		text-decoration: none;
+		padding: 0.5rem 0;
+		font-weight: 600;
+	}
+
+	.menu__links li {
+		margin: 1rem 4rem 1rem 0;
+		position: relative;
+		height: 100%;
+	}
+
+	.menu__links li.separator {
+		border-bottom: 1px dashed #fff;
+		margin: 1rem 0;
+	}
 	@media (max-width: 768px) {
 		.header {
 			flex-direction: column;
