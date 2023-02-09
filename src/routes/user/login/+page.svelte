@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { TryLogin } from '../../services/login';
+	import { TryLogin } from '../../../services/login';
 
 	onMount(() => {
 		if (localStorage.getItem('token')) {

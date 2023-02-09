@@ -5,6 +5,6 @@
 		localStorage.removeItem('token');
 		localStorage.removeItem('username');
 		localStorage.removeItem('cookie');
-		location.href = '/login';
+		location.href = '/user/login';
 	});
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { GetZabbixUserInfo } from '../../services/login';
+	import { GetZabbixScripts, GetZabbixUserInfo } from '../../../services/zabbix-api/getters';
 	import { onMount } from 'svelte';
-	import type { IZabbixUserGroup } from '../../types/zabbix-api-interfaces';
+	import type { IZabbixUserGroup } from '../../../types/zabbix-api-interfaces';
 
 	let showUsername: string,
 		showName: string,
@@ -34,6 +34,7 @@
 		} else {
 			location.href = '/';
 		}
+		GetZabbixScripts().then((response) => console.log(response));
 	});
 </script>
 

@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 
 	const t = 'token';
-	const ok = '/profile';
-	const ko = '/login';
+	const ok = '/user/profile';
+	const ko = '/user/login';
 
 	onMount(() => {
 		localStorage.getItem(t) ? href(ok) : href(ko);

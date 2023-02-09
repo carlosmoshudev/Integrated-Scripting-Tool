@@ -6,7 +6,7 @@
 	--primary-font: 'Montserrat', sans-serif;
 }
 
-.base__formating {
+.base__formatting {
 	margin: var(--zero);
 	padding: var(--zero);
 	box-sizing: var(--sizing);
