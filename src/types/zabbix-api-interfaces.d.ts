@@ -1,3 +1,4 @@
+// Responses
 export interface IZabbixUserLoginResponse {
 	jsonrpc: string;
 	result: string;
@@ -6,61 +7,87 @@ export interface IZabbixUserLoginResponse {
 
 export interface IZabbixUserGetResponse {
 	jsonrpc: string;
-	result: IZabbixUserGetResult[];
+	result: Zabbix_User[];
 	id: number;
 }
 
-interface IZabbixUserGetResult {
+export interface IZabbixHostGetResponse {
+	jsonrpc: string;
+	result: Zabbix_Host[];
+	id: number;
+}
+
+export interface IZabbixScriptGetResponse {
+	jsonrpc: string;
+	result: Zabbix_Script[];
+	id: number;
+}
+
+export interface IZabbixHostGroupGetResponse {
+	jsonrpc: string;
+	result: Zabbix_HostGroup[];
+	id: number;
+}
+// Types
+export type Zabbix_User = {
 	userid: string;
 	username: string;
 	name: string;
 	surname: string;
 	attempt_ip: string;
-	usrgrps: IZabbixUserGroup[];
-	medias: (IZabbixUserMedias | IZabbixUserMediasAlt)[];
-	role: IZabbixUserRole;
-}
+	usrgrps: Zabbix_UserGroup[];
+	medias: (Zabbix_UserMedias | Zabbix_UserMediasAlt)[];
+	role: Zabbix_UserRole;
+};
 
-interface IZabbixUserRole {
+type Zabbix_UserRole = {
 	name: string;
-}
+};
 
-interface IZabbixUserMediasAlt {
+type Zabbix_UserMediasAlt = {
 	sendto: string[];
-}
+};
 
-interface IZabbixUserMedias {
+type Zabbix_UserMedias = {
 	sendto: string[] | string;
-}
+};
 
-interface IZabbixUserGroup {
+type Zabbix_UserGroup = {
 	usrgrpid: string;
 	name: string;
-}
+};
 
-export interface IZabbixHostGetResponse {
-	jsonrpc: string;
-	result: IZabbixHostGetResult[];
-	id: number;
-}
-
-interface IZabbixHostGetResult {
+export type Zabbix_Host = {
 	hostid: string;
 	name: string;
-	items: IZabbixHostItem[];
-	groups: IZabbixHostGroup[];
-	interfaces: IZabbixHostInterface[];
-}
+	items: Zabbix_HostItem[];
+	groups: Zabbix_HostGroup[];
+	interfaces: Zabbix_HostInterface[];
+};
 
-interface IZabbixHostInterface {
+type Zabbix_HostInterface = {
 	ip: string;
-}
+};
 
-interface IZabbixHostGroup {
+export type Zabbix_HostGroup = {
+	groupid: string;
 	name: string;
-}
+};
 
-interface IZabbixHostItem {
+type Zabbix_HostItem = {
 	name: string;
 	lastvalue: string;
-}
+};
+
+export type Zabbix_Script = {
+	scriptid: string;
+	name: string;
+	command: string;
+	description: string;
+	usrgrpid: string;
+	host_access: string;
+	timeout: string;
+	authtype: string;
+	parameters: string[];
+	groups: Zabbix_HostGroup[];
+};

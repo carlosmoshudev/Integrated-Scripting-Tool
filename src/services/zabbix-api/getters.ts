@@ -1,5 +1,7 @@
 import type {
 	IZabbixHostGetResponse,
+	IZabbixHostGroupGetResponse,
+	IZabbixScriptGetResponse,
 	IZabbixUserGetResponse,
 	IZabbixUserLoginResponse
 } from '../../types/zabbix-api-interfaces';
@@ -46,7 +48,7 @@ export async function GetZabbixUserInfo(): Promise<IZabbixUserGetResponse> {
 	}).then((response) => response.json());
 }
 
-export async function GetZabbixScripts() {
+export async function GetZabbixScripts(): Promise<IZabbixScriptGetResponse> {
 	return fetch(ZabbixApiUrl, {
 		method: 'POST',
 		headers: headers,
@@ -81,7 +83,7 @@ export async function GetZabbixHosts(): Promise<IZabbixHostGetResponse> {
 	}).then((response) => response.json());
 }
 
-export async function GetZabbixHostGroups() {
+export async function GetZabbixHostGroups(): Promise<IZabbixHostGroupGetResponse> {
 	return fetch(ZabbixApiUrl, {
 		method: 'POST',
 		headers: headers,

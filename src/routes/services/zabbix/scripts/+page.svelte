@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { GetZabbixScripts } from '../../../../services/zabbix-api/getters';
+	import type { Zabbix_Script } from './../../../../types/zabbix-api-interfaces';
 
-	let scriptCollection = [];
+	let scriptCollection: Array<Zabbix_Script> = [];
 
 	onMount(async () => {
 		GetZabbixScripts().then((response) => {
@@ -17,7 +18,9 @@
 			<div class="script__name">Nombre: {script.name || ' N/A'}</div>
 			<div class="script__command">Comando: {script.command || ' N/A'}</div>
 			<div class="script__description">Descripción: {script.description || ' N/A'}</div>
-			<button on:click={() => {}}>Ejecutar</button>
+			<div class="script__id">ID: {script.scriptid || ' N/A'}</div>
+			<div class="script__timeout">Timeout: {script.timeout || ' N/A'}</div>
+			{script.usrgrpid}
 		</div>
 	{/each}
 </section>

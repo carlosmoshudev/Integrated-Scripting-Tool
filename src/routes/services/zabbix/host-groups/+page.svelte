@@ -2,7 +2,9 @@
 	import { onMount } from 'svelte';
 	import { GetZabbixHostGroups } from '../../../../services/zabbix-api/getters';
 
-	let hostGroupCollection = [];
+	import type { Zabbix_HostGroup } from './../../../../types/zabbix-api-interfaces';
+
+	let hostGroupCollection: Array<Zabbix_HostGroup> = [];
 
 	onMount(async () => {
 		GetZabbixHostGroups().then((response) => {
@@ -15,6 +17,7 @@
 	{#each hostGroupCollection as hostGroup}
 		<div class="host-group__container">
 			<div class="host-group__name">{hostGroup.name}</div>
+			<div class="host-group__id">{hostGroup.groupid}</div>
 		</div>
 	{/each}
 </section>

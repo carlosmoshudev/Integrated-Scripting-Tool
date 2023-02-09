@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { GetZabbixUserInfo } from '../../../../services/zabbix-api/getters';
-	import type { IZabbixUserGetResult } from '../../../../types/zabbix-api-interfaces';
+	import type { Zabbix_User } from '../../../../types/zabbix-api-interfaces';
 
-	let userCollection: Array<IZabbixUserGetResult> = [];
+	let userCollection: Array<Zabbix_User> = [];
 
 	onMount(async () => {
 		GetZabbixUserInfo().then((response) => {

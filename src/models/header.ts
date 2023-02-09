@@ -2,7 +2,7 @@ import type { HeaderNavLink, NotLoggedMenuItems, LoggedMenuItems } from '../type
 
 export const headerLinks: Array<HeaderNavLink> = [
 	{
-		title: 'AV API REST',
+		title: 'Integración',
 		href: '/services/av-api-rest',
 		icon: 'fa-code'
 	},
@@ -12,17 +12,17 @@ export const headerLinks: Array<HeaderNavLink> = [
 		icon: 'fa-server'
 	},
 	{
-		title: 'IPAM & Racks',
+		title: 'IPAM',
 		href: '/services/ipam',
 		icon: 'fa-network-wired'
 	},
 	{
-		title: 'Remote APs',
+		title: 'APs',
 		href: '/services/remote-aps',
 		icon: 'fa-wifi'
 	},
 	{
-		title: 'Mesh Central & Commander',
+		title: 'Mesh Central',
 		href: '/services/mesh-central',
 		icon: 'fa-laptop'
 	},
@@ -32,7 +32,7 @@ export const headerLinks: Array<HeaderNavLink> = [
 		icon: 'fa-user'
 	},
 	{
-		title: 'ZTP tools',
+		title: 'Provisión',
 		href: '/services/ztp-tools',
 		icon: 'fa-microchip'
 	}
@@ -40,7 +40,7 @@ export const headerLinks: Array<HeaderNavLink> = [
 
 export const loggedMenuItems: LoggedMenuItems = {
 	logout: {
-		title: 'Cerrar sesión',
+		title: 'Desconectarse',
 		href: '/user/logout',
 		icon: 'fa-sign-out-alt'
 	},
@@ -50,17 +50,17 @@ export const loggedMenuItems: LoggedMenuItems = {
 		icon: 'fa-user'
 	},
 	settings: {
-		title: 'Configuración',
+		title: 'Ajustes',
 		href: '/user/settings',
 		icon: 'fa-cog'
 	},
 	loadScript: {
-		title: 'Cargar nuevo script',
+		title: 'Importar script',
 		href: '/load-script',
 		icon: 'fa-file-upload'
 	},
 	manageScripts: {
-		title: 'Administrar scripts',
+		title: 'Repositorio',
 		href: '/manage-scripts',
 		icon: 'fa-file-code'
 	}
@@ -68,12 +68,12 @@ export const loggedMenuItems: LoggedMenuItems = {
 
 export const notLoggedMenuItems: NotLoggedMenuItems = {
 	login: {
-		title: 'Iniciar sesión',
+		title: 'Conectarse',
 		href: '/user/login',
 		icon: 'fa-sign-in-alt'
 	},
 	register: {
-		title: 'Registrarse',
+		title: 'Darse de alta',
 		href: '/user/register',
 		icon: 'fa-user-plus'
 	}

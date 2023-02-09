@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { GetZabbixHosts } from '../../../../services/zabbix-api/getters';
-	import type { IZabbixHostGetResult } from '../../../../types/zabbix-api-interfaces';
+	import type { Zabbix_Host } from '../../../../types/zabbix-api-interfaces';
 
-	let hostCollection: Array<IZabbixHostGetResult> = [];
+	let hostCollection: Array<Zabbix_Host> = [];
 
 	onMount(async () => {
 		GetZabbixHosts().then((response) => {

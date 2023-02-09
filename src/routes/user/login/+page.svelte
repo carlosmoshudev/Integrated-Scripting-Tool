@@ -9,8 +9,8 @@
 	});
 
 	async function loginEvent() {
-		const username = document.getElementById('u') as HTMLInputElement;
-		const password = document.getElementById('p') as HTMLInputElement;
+		const username = document.getElementById('user') as HTMLInputElement;
+		const password = document.getElementById('password') as HTMLInputElement;
 		TryLogin(username.value, password.value).then(() => {
 			window.location.href = '/';
 		});
@@ -20,12 +20,12 @@
 <fieldset class="form">
 	<legend>Inicio de sesión con Zabbix</legend>
 	<div class="field">
-		<label for="u">Usuario</label>
-		<input type="text" id="u" />
+		<label for="user">Usuario</label>
+		<input type="text" id="user" />
 	</div>
 	<div class="field">
-		<label for="p">Contraseña</label>
-		<input type="password" id="p" />
+		<label for="password">Contraseña</label>
+		<input type="password" id="password" />
 	</div>
 	<button on:click={loginEvent}>Iniciar sesión</button>
 </fieldset>

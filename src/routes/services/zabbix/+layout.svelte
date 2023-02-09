@@ -29,27 +29,30 @@
 <style>
 	* {
 		box-sizing: border-box;
+		font-family: 'Montserrat', sans-serif;
 	}
 
 	section {
 		position: relative;
-		left: -20px;
-		top: -10px;
+		left: -26px;
+		top: -5px;
 		display: grid;
 		grid-template-columns: 1fr 4fr;
 		grid-template-rows: 1fr;
 		grid-template-areas: 'menu main';
-		height: 88vh;
+		height: 1000vh;
 	}
 
 	.zabbix__widget__menu {
 		grid-area: menu;
-		background-color: #f5f5f5;
+		background-image: linear-gradient(to top right, #fff, #752525);
+		padding: 20px;
+		font-size: large;
 	}
 
 	.zabbix__widget__menu ul {
 		position: sticky;
-		top: 50px;
+		top: 60px;
 		left: -20px;
 		list-style: none;
 		padding: 0;
@@ -63,7 +66,7 @@
 
 	.zabbix__widget__menu li a {
 		text-decoration: none;
-		color: #000;
+		color: #fff;
 	}
 
 	.zabbix__widget__menu li a:hover {

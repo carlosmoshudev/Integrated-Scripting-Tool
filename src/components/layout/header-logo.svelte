@@ -1,5 +1,5 @@
 <script lang="ts">
-	const imgData = {
+	const imgData: { src: string; alt: string } = {
 		src: '/logo_white.png',
 		alt: 'Trison'
 	};
