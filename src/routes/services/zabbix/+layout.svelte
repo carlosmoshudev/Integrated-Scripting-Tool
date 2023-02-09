@@ -3,23 +3,94 @@
 
 <section>
 	<div class="zabbix__widget__menu base__formatting">
-		<ul>
-			<li>
-				<a href="/services/zabbix/hosts">Equipos</a>
-			</li>
-			<li>
-				<a href="/services/zabbix/host-groups">Grupos</a>
-			</li>
-			<li>
-				<a href="/services/zabbix/templates">Plantillas</a>
-			</li>
-			<li>
-				<a href="/services/zabbix/users">Usuarios</a>
-			</li>
-			<li>
-				<a href="/services/zabbix/scripts">Scripts</a>
-			</li>
-		</ul>
+		<fieldset>
+			<legend> Equipos</legend>
+			<ul>
+				<li>
+					<a href="/services/zabbix/hosts" class="animated__underline">
+						<i class="fas fa-desktop" />
+						Listado
+					</a>
+				</li>
+				<li>
+					<a href="/services/zabbix/host-groups" class="animated__underline">
+						<i class="fas fa-grip-horizontal" />
+						Grupos
+					</a>
+				</li>
+				<li>
+					<a href="/services/zabbix/templates" class="animated__underline">
+						<i class="fas fa-clone" />
+						Plantillas
+					</a>
+				</li>
+				<li>
+					<a href="/services/zabbix/applications" class="animated__underline">
+						<i class="fas fa-cubes" />
+						Aplicaciones
+					</a>
+				</li>
+				<li>
+					<a href="/services/zabbix/items" class="animated__underline">
+						<i class="fas fa-cube" />
+						Items
+					</a>
+				</li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend> Usuarios</legend>
+			<ul>
+				<li>
+					<a href="/services/zabbix/users" class="animated__underline">
+						<i class="fas fa-users" />
+						Usuarios
+					</a>
+				</li>
+
+				<li>
+					<a href="/services/zabbix/user-groups" class="animated__underline">
+						<i class="fas fa-address-book" />
+						Grupos
+					</a>
+				</li>
+
+				<li>
+					<a href="/services/zabbix/roles" class="animated__underline">
+						<i class="fas fa-user-tag" />
+						Roles
+					</a>
+				</li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend> Control</legend>
+			<ul>
+				<li>
+					<a href="/services/zabbix/problems" class="animated__underline">
+						<i class="fas fa-exclamation-triangle" />
+						Problemas
+					</a>
+				</li>
+				<li>
+					<a href="/services/zabbix/services" class="animated__underline">
+						<i class="fas fa-server" />
+						Servicios
+					</a>
+				</li>
+				<li>
+					<a href="/services/zabbix/tasks" class="animated__underline">
+						<i class="fas fa-tasks" />
+						Tareas
+					</a>
+				</li>
+				<li>
+					<a href="/services/zabbix/scripts" class="animated__underline">
+						<i class="fas fa-code" /> Scripts
+					</a>
+				</li>
+			</ul>
+		</fieldset>
 	</div>
 	<main>
 		<slot />
@@ -29,49 +100,54 @@
 <style>
 	* {
 		box-sizing: border-box;
-		font-family: 'Montserrat', sans-serif;
+	}
+
+	fieldset {
+		padding: 0.2rem;
+		margin: 0.3rem 0 0.5rem 0;
 	}
 
 	section {
 		position: relative;
-		left: -26px;
-		top: -5px;
+		left: -1.7rem;
+		top: -1rem;
 		display: grid;
-		grid-template-columns: 1fr 4fr;
+		grid-template-columns: 1fr 5fr;
 		grid-template-rows: 1fr;
 		grid-template-areas: 'menu main';
-		height: 1000vh;
 	}
 
 	.zabbix__widget__menu {
+		position: sticky;
+		top: 3rem;
 		grid-area: menu;
-		background-image: linear-gradient(to top right, #fff, #752525);
-		padding: 20px;
-		font-size: large;
+		background-image: linear-gradient(to right, #1e3c72, #2a5298, #3366b2);
+		padding: 10px;
+		font-weight: 600;
+		max-height: 100vh;
 	}
 
 	.zabbix__widget__menu ul {
-		position: sticky;
-		top: 60px;
-		left: -20px;
 		list-style: none;
 		padding: 0;
 		margin: 0;
 	}
 
 	.zabbix__widget__menu li {
-		padding: 10px;
-		border-bottom: 1px solid #ccc;
+		padding: 0.5rem;
 	}
 
 	.zabbix__widget__menu li a {
 		text-decoration: none;
-		color: #fff;
+		color: #ffffffcc;
 	}
 
 	.zabbix__widget__menu li a:hover {
-		color: #000;
-		text-decoration: underline;
+		color: #ffffff;
+	}
+
+	.zabbix__widget__menu li a i {
+		font-size: 1rem;
 	}
 
 	main {

@@ -114,3 +114,38 @@ export async function GetZabbixTemplates() {
 		})
 	}).then((response) => response.json());
 }
+
+export async function GetZabbixProblems() {
+	return fetch(ZabbixApiUrl, {
+		method: 'POST',
+		headers: headers,
+		body: JSON.stringify({
+			jsonrpc: '2.0',
+			method: 'problem.get',
+			params: {
+				output: 'extend',
+				selectAcknowledges: 'extend',
+				selectTags: 'extend',
+				selectSuppressionData: 'extend',
+				selectHosts: 'extend',
+				selectItems: 'extend',
+				selectTriggers: 'extend',
+				selectEvents: 'extend',
+				selectApplication: 'extend',
+				selectInventory: 'extend',
+				selectLatestEvent: 'extend',
+				selectLatestEventProblem: 'extend',
+				selectLatestEventUnacknowledged: 'extend',
+				selectLatestEventAcknowledged: 'extend',
+				selectGroup: 'extend',
+				selectHost: 'extend',
+				selectHostGroup: 'extend',
+				selectHostPrototypes: 'extend',
+				selectHttpTest: 'extend',
+				selectItem: 'extend'
+			},
+			auth: localStorage.getItem('token'),
+			id: 1
+		})
+	}).then((response) => response.json());
+}

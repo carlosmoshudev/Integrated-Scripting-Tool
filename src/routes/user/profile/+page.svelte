@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { GetZabbixScripts, GetZabbixUserInfo } from '../../../services/zabbix-api/getters';
+	import { GetZabbixUserInfo } from '../../../services/zabbix-api/getters';
 	import { onMount } from 'svelte';
-	import type { IZabbixUserGroup } from '../../../types/zabbix-api-interfaces';
+	import type { Zabbix_UserGroup } from '../../../types/zabbix-api-interfaces';
 
 	let showUsername: string,
 		showName: string,
 		showSurname: string,
 		showEmail: string,
 		showIP: string,
-		showUserGroups: IZabbixUserGroup[] = [],
+		showUserGroups: Zabbix_UserGroup[] = [],
 		showRole: string,
 		cookie: string,
 		zabbixToken: string;
@@ -34,7 +34,6 @@
 		} else {
 			location.href = '/';
 		}
-		GetZabbixScripts().then((response) => console.log(response));
 	});
 </script>
 

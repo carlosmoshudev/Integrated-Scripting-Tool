@@ -15,7 +15,7 @@
 	<i class="fas {menuIcon}" />
 </div>
 {#if menuIcon === 'fa-times'}
-	<div class="top__left__menu base__formatting">
+	<div class="top__right__menu base__formatting">
 		<ul class="menu__links">
 			{#if !localStorage.getItem(t)}
 				{#each Object.entries(notLoggedMenuItems) as [_K, menuItem]}
