@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+	--zero: 0;
+	--sizing: border-box;
+	--primary-font: 'Montserrat', sans-serif;
+}
+
+.base__formating {
+	margin: var(--zero);
+	padding: var(--zero);
+	box-sizing: var(--sizing);
+	font-family: var(--primary-font);
+}

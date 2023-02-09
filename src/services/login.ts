@@ -1,8 +1,12 @@
-type res = {
-	result: string;
-};
+import type {
+	IZabbixUserLoginResponse,
+	IZabbixUserGetResponse
+} from '../types/zabbix-api-interfaces';
 
-async function GetZabbixToken(username: string, password: string): Promise<res> {
+async function GetZabbixToken(
+	username: string,
+	password: string
+): Promise<IZabbixUserLoginResponse> {
 	return fetch('http://20.229.182.95:9080/api_jsonrpc.php', {
 		method: 'POST',
 		headers: {
@@ -46,7 +50,7 @@ export async function TryLogin(username: string, password: string) {
 	});
 }
 
-export async function GetZabbixUserInfo() {
+export async function GetZabbixUserInfo(): Promise<IZabbixUserGetResponse> {
 	return fetch('http://20.229.182.95:9080/api_jsonrpc.php', {
 		method: 'POST',
 		headers: {
