@@ -1,32 +1,33 @@
 <script lang="ts">
 	import { GetZabbixUserInfo } from '../../services/login';
 	import { onMount } from 'svelte';
-	let userdata = {
-		username: ' ',
-		cookie: ' ',
-		zabbixToken: ' ',
-		name: ' ',
-		surname: ' ',
-		ip: ' ',
-		email: ' ',
-		userGroups: [{ name: ' ' }],
-		role: ' '
-	};
+	import type { IZabbixUserGroup } from '../../types/zabbix-api-interfaces';
+
+	let showUsername: string,
+		showName: string,
+		showSurname: string,
+		showEmail: string,
+		showIP: string,
+		showUserGroups: IZabbixUserGroup[] = [],
+		showRole: string,
+		cookie: string,
+		zabbixToken: string;
+
 	onMount(() => {
 		if (localStorage.getItem('token')) {
-			userdata.username = localStorage.getItem('username') || ' ';
-			userdata.zabbixToken = localStorage.getItem('token') || ' ';
-			userdata.cookie = localStorage.getItem('cookie') || ' ';
-			GetZabbixUserInfo().then((res) => {
-				res.result.forEach((element: any) => {
-					if (element.username === userdata.username) {
-						userdata.name = element.name;
-						userdata.surname = element.surname;
-						userdata.ip = element.attempt_ip;
-						userdata.email = element.medias[0].sendto[0];
-						userdata.userGroups = element.usrgrps;
-						userdata.role = element.role.name;
-						console.log(element);
+			let currentUser = localStorage.getItem('username') || ' ';
+			zabbixToken = localStorage.getItem('token') || ' ';
+			cookie = localStorage.getItem('cookie') || ' ';
+			GetZabbixUserInfo().then((response) => {
+				response.result.forEach((element) => {
+					if (element.username === currentUser) {
+						showUsername = element.username;
+						showName = element.name;
+						showSurname = element.surname;
+						showIP = element.attempt_ip;
+						showEmail = element.medias[0].sendto[0];
+						showUserGroups = element.usrgrps;
+						showRole = element.role.name;
 					}
 				});
 			});
@@ -37,20 +38,20 @@
 </script>
 
 <section>
-	<h1>Perfil de {userdata.name}</h1>
+	<h1>Perfil de {showName}</h1>
 	<fieldset>
 		<legend>Información de usuario</legend>
-		<p>Nombre completo: {userdata.name} {userdata.surname}</p>
-		<p>IP de conexión: {userdata.ip}</p>
-		<p>Email: {userdata.email}</p>
-		<p>Grupos: {userdata.userGroups.map((group) => group.name)}</p>
-		<p>Rol: {userdata.role}</p>
+		<p>Nombre completo: {showName} {showSurname}</p>
+		<p>IP de conexión: {showIP}</p>
+		<p>Email: {showEmail}</p>
+		<p>Grupos: {showUserGroups.map((group) => group.name)}</p>
+		<p>Rol: {showRole}</p>
 	</fieldset>
 	<fieldset>
 		<legend>Información de sesión</legend>
-		<p>Nombre de usuario: {userdata.username}</p>
-		<p>Token de Zabbix: {userdata.zabbixToken}</p>
-		<p>Cookie de Sesión: {userdata.cookie}</p>
+		<p>Nombre de usuario: {showUsername}</p>
+		<p>Token de Zabbix: {zabbixToken}</p>
+		<p>Cookie de Sesión: {cookie}</p>
 	</fieldset>
 </section>
 
