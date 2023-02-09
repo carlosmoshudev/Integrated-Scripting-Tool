@@ -3,7 +3,7 @@
 
 	import { loggedMenuItems, notLoggedMenuItems } from '../../models/header';
 
-	function swapMenuIcon(_event: MouseEvent) {
+	function swapMenuIcon() {
 		menuIcon = menuIcon === 'fa-bars' ? 'fa-times' : 'fa-bars';
 	}
 </script>

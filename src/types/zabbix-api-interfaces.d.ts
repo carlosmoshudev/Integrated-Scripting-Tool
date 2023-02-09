@@ -37,3 +37,30 @@ interface IZabbixUserGroup {
 	usrgrpid: string;
 	name: string;
 }
+
+export interface IZabbixHostGetResponse {
+	jsonrpc: string;
+	result: IZabbixHostGetResult[];
+	id: number;
+}
+
+interface IZabbixHostGetResult {
+	hostid: string;
+	name: string;
+	items: IZabbixHostItem[];
+	groups: IZabbixHostGroup[];
+	interfaces: IZabbixHostInterface[];
+}
+
+interface IZabbixHostInterface {
+	ip: string;
+}
+
+interface IZabbixHostGroup {
+	name: string;
+}
+
+interface IZabbixHostItem {
+	name: string;
+	lastvalue: string;
+}

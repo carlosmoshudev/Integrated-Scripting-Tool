@@ -16,6 +16,9 @@
 			<li>
 				<a href="/services/zabbix/users">Usuarios</a>
 			</li>
+			<li>
+				<a href="/services/zabbix/scripts">Scripts</a>
+			</li>
 		</ul>
 	</div>
 	<main>
@@ -29,6 +32,9 @@
 	}
 
 	section {
+		position: relative;
+		left: -20px;
+		top: -10px;
 		display: grid;
 		grid-template-columns: 1fr 4fr;
 		grid-template-rows: 1fr;
@@ -42,6 +48,9 @@
 	}
 
 	.zabbix__widget__menu ul {
+		position: sticky;
+		top: 50px;
+		left: -20px;
 		list-style: none;
 		padding: 0;
 		margin: 0;

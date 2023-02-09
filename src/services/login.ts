@@ -13,7 +13,7 @@ function cypherPassword(password: string, username: string, zabbix: boolean): st
 	return cypheredPassword;
 }
 
-export async function TryLogin(username: string, password: string) {
+export async function TryLogin(username: string, password: string): Promise<void> {
 	await GetZabbixToken(username, password).then((response) => {
 		const isLoggedInZabbix = response.result !== undefined ? true : false;
 		const cookie = cypherPassword(password, username, isLoggedInZabbix);

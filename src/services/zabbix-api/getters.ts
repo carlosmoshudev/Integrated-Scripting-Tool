@@ -1,4 +1,5 @@
 import type {
+	IZabbixHostGetResponse,
 	IZabbixUserGetResponse,
 	IZabbixUserLoginResponse
 } from '../../types/zabbix-api-interfaces';
@@ -52,6 +53,57 @@ export async function GetZabbixScripts() {
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'script.get',
+			params: {
+				output: 'extend'
+			},
+			auth: localStorage.getItem('token'),
+			id: 1
+		})
+	}).then((response) => response.json());
+}
+
+export async function GetZabbixHosts(): Promise<IZabbixHostGetResponse> {
+	return fetch(ZabbixApiUrl, {
+		method: 'POST',
+		headers: headers,
+		body: JSON.stringify({
+			jsonrpc: '2.0',
+			method: 'host.get',
+			params: {
+				output: ['hostid', 'name'],
+				selectInterfaces: ['ip'],
+				selectItems: ['name', 'lastvalue'],
+				selectGroups: ['name']
+			},
+			auth: localStorage.getItem('token'),
+			id: 1
+		})
+	}).then((response) => response.json());
+}
+
+export async function GetZabbixHostGroups() {
+	return fetch(ZabbixApiUrl, {
+		method: 'POST',
+		headers: headers,
+		body: JSON.stringify({
+			jsonrpc: '2.0',
+			method: 'hostgroup.get',
+			params: {
+				output: 'extend'
+			},
+			auth: localStorage.getItem('token'),
+			id: 1
+		})
+	}).then((response) => response.json());
+}
+
+export async function GetZabbixTemplates() {
+	return fetch(ZabbixApiUrl, {
+		method: 'POST',
+		headers: headers,
+		body: JSON.stringify({
+			jsonrpc: '2.0',
+			method: 'template.get',
 			params: {
 				output: 'extend'
 			},

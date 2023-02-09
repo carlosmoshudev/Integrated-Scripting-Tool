@@ -15,14 +15,18 @@ main {
 }
 
 header {
+	position: sticky;
+	top: 0;
 	width: 102%;
 	margin-left: -1%;
 	margin-top: -0.7%;
 	height: 3rem;
+	z-index: 100;
 }
 
 ::-webkit-scrollbar {
 	height: 0;
+	width: 0;
 }
 
 .hide {

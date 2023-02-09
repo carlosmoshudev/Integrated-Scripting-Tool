@@ -69,12 +69,12 @@ export const loggedMenuItems: LoggedMenuItems = {
 export const notLoggedMenuItems: NotLoggedMenuItems = {
 	login: {
 		title: 'Iniciar sesión',
-		href: '/login',
+		href: '/user/login',
 		icon: 'fa-sign-in-alt'
 	},
 	register: {
 		title: 'Registrarse',
-		href: '/register',
+		href: '/user/register',
 		icon: 'fa-user-plus'
 	}
 };
