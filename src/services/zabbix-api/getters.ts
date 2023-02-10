@@ -56,7 +56,8 @@ export async function GetZabbixScripts(): Promise<IZabbixScriptGetResponse> {
 			jsonrpc: '2.0',
 			method: 'script.get',
 			params: {
-				output: 'extend'
+				output: 'extend',
+				selectGroups: 'extend'
 			},
 			auth: localStorage.getItem('token'),
 			id: 1
