@@ -8,7 +8,7 @@ function cypherPassword(password: string, username: string, zabbix: boolean): st
 		const thirdCypheredChar = password.charCodeAt(i) + 3;
 		cypheredPassword += String.fromCharCode(cypheredChar, secondCypheredChar, thirdCypheredChar);
 	}
-	const zabbixLogged = zabbix ? '1' : '0';
+	const zabbixLogged = zabbix ? 'zL0gg1n' : 'zL0gg0ut';
 	cypheredPassword = `${zabbixLogged}_${btoa(cypheredPassword)}_${btoa(username)};`;
 	return cypheredPassword;
 }
