@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let LinkProperties: NavLinkWithIcon;
 	import { page } from '$app/stores';
-	import type { NavLinkWithIcon } from './framework';
+	import type { NavLinkWithIcon } from '../framework';
 	const linkAnimation_CSS = 'animated__underline';
 </script>
 

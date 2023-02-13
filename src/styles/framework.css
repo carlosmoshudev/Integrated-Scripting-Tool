@@ -50,7 +50,7 @@
 }
 
 /* fieldset */
-.fieldset__container {
+.fieldset__form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -58,11 +58,34 @@
 	min-width: 50%;
 }
 
-.fieldset__field {
+.fieldset__key__value {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 50%;
+	padding: 0;
+	margin: 0;
+}
+
+.fieldset__field__input {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: space-between;
 	min-width: 50%;
 	padding: 0.5rem;
+}
+
+.fieldset__field__kv {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: space-between;
+	min-width: 70%;
+	padding: 0.5rem;
+}
+
+.field__key {
+	font-weight: 600;
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { HeaderLogo } from './framework';
+	import type { HeaderLogo } from '../framework';
 	export let LogoProperties: HeaderLogo;
 </script>
 

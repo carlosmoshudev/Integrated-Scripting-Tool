@@ -3,17 +3,19 @@
 	import { onMount } from 'svelte';
 	import type { Zabbix_UserGroup } from '../../../types/zabbix-api-interfaces';
 
-	import PageContainer from '../../../framework/containers/page.svelte';
+	let showUsername: string;
+	let showName: string;
+	let showSurname: string;
+	let showEmail: string;
+	let showIP: string;
+	let showUserGroups: Zabbix_UserGroup[] = [];
+	let showRole: string;
+	let cookie: string;
+	let zabbixToken: string;
 
-	let showUsername: string,
-		showName: string,
-		showSurname: string,
-		showEmail: string,
-		showIP: string,
-		showUserGroups: Zabbix_UserGroup[] = [],
-		showRole: string,
-		cookie: string,
-		zabbixToken: string;
+	import PageContainer from '../../../components/containers/page.svelte';
+	import Fieldset from '../../../components/fieldset/fieldset.svelte';
+	import KeyValueField from '../../../components/fieldset/key-value-field.svelte';
 
 	onMount(() => {
 		if (localStorage.getItem('token')) {
@@ -39,54 +41,16 @@
 	});
 </script>
 
-<PageContainer>
-	<h1>Perfil de {showName}</h1>
-	<fieldset>
-		<legend>Información de usuario</legend>
-		<p>Nombre completo: {showName} {showSurname}</p>
-		<p>IP de conexión: {showIP}</p>
-		<p>Email: {showEmail}</p>
-		<p>Grupos: {showUserGroups.map((group) => group.name)}</p>
-		<p>Rol: {showRole}</p>
-	</fieldset>
-	<fieldset>
-		<legend>Información de sesión</legend>
-		<p>Nombre de usuario: {showUsername}</p>
-		<p>Token de Zabbix: {zabbixToken}</p>
-		<p>Cookie de Sesión: {cookie}</p>
-	</fieldset>
+<PageContainer Title="Perfil de usuario {showName}">
+	<Fieldset Legend="Información de usuario" Type="key__value">
+		<KeyValueField Key="Nombre completo" Value="{showName} {showSurname}" />
+		<KeyValueField Key="IP de conexión" Value={showIP} />
+		<KeyValueField Key="Email" Value={showEmail} />
+		<KeyValueField Key="Grupos" Value={showUserGroups.map((group) => group.name).toString()} />
+		<KeyValueField Key="Rol" Value={showRole} />
+	</Fieldset>
+	<Fieldset Legend="Información de sesión">
+		<KeyValueField Key="Nombre de usuario" Value={showUsername} />
+		<KeyValueField Key="Token de Zabbix" Value={zabbixToken} />
+	</Fieldset>
 </PageContainer>
-
-<style>
-	* {
-		box-sizing: border-box;
-	}
-	section {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-	fieldset {
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		padding: 40px;
-		min-width: 1090px;
-		align-items: center;
-		justify-content: center;
-	}
-
-	legend {
-		font-size: 1.2em;
-		font-weight: bold;
-		margin: 0 0 0 50px;
-	}
-
-	p {
-		margin: 10px 0;
-	}
-
-	h1 {
-		font-size: 1.5em;
-	}
-</style>

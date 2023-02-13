@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let MenuItemLink: MenuLinkWithIcon;
-	import type { MenuLinkWithIcon } from './framework';
+	import type { MenuLinkWithIcon } from '../framework';
 	const mainMenuLink_CSS = 'animated__underline';
 </script>
 
