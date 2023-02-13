@@ -6,16 +6,16 @@ import type {
 	IZabbixUserLoginResponse
 } from '../../types/zabbix-api-interfaces';
 
-const ZabbixApiUrl = 'http://20.229.182.95:9080/api_jsonrpc.php';
-const headers = { 'Content-Type': 'application/json' };
+const Url = 'http://20.229.182.95:9080/api_jsonrpc.php';
+const Headers = { 'Content-Type': 'application/json' };
 
 export async function GetZabbixToken(
 	username: string,
 	password: string
 ): Promise<IZabbixUserLoginResponse> {
-	return fetch(ZabbixApiUrl, {
+	return fetch(Url, {
 		method: 'POST',
-		headers: headers,
+		headers: Headers,
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'user.login',
@@ -30,9 +30,9 @@ export async function GetZabbixToken(
 }
 
 export async function GetZabbixUserInfo(): Promise<IZabbixUserGetResponse> {
-	return fetch(ZabbixApiUrl, {
+	return fetch(Url, {
 		method: 'POST',
-		headers: headers,
+		headers: Headers,
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'user.get',
@@ -49,9 +49,9 @@ export async function GetZabbixUserInfo(): Promise<IZabbixUserGetResponse> {
 }
 
 export async function GetZabbixScripts(): Promise<IZabbixScriptGetResponse> {
-	return fetch(ZabbixApiUrl, {
+	return fetch(Url, {
 		method: 'POST',
-		headers: headers,
+		headers: Headers,
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'script.get',
@@ -66,9 +66,9 @@ export async function GetZabbixScripts(): Promise<IZabbixScriptGetResponse> {
 }
 
 export async function GetZabbixHosts(): Promise<IZabbixHostGetResponse> {
-	return fetch(ZabbixApiUrl, {
+	return fetch(Url, {
 		method: 'POST',
-		headers: headers,
+		headers: Headers,
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'host.get',
@@ -85,9 +85,9 @@ export async function GetZabbixHosts(): Promise<IZabbixHostGetResponse> {
 }
 
 export async function GetZabbixHostGroups(): Promise<IZabbixHostGroupGetResponse> {
-	return fetch(ZabbixApiUrl, {
+	return fetch(Url, {
 		method: 'POST',
-		headers: headers,
+		headers: Headers,
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'hostgroup.get',
@@ -101,9 +101,9 @@ export async function GetZabbixHostGroups(): Promise<IZabbixHostGroupGetResponse
 }
 
 export async function GetZabbixTemplates() {
-	return fetch(ZabbixApiUrl, {
+	return fetch(Url, {
 		method: 'POST',
-		headers: headers,
+		headers: Headers,
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'template.get',
@@ -117,9 +117,9 @@ export async function GetZabbixTemplates() {
 }
 
 export async function GetZabbixProblems() {
-	return fetch(ZabbixApiUrl, {
+	return fetch(Url, {
 		method: 'POST',
-		headers: headers,
+		headers: Headers,
 		body: JSON.stringify({
 			jsonrpc: '2.0',
 			method: 'problem.get',
@@ -150,3 +150,13 @@ export async function GetZabbixProblems() {
 		})
 	}).then((response) => response.json());
 }
+
+export default {
+	GetZabbixToken,
+	GetZabbixUserInfo,
+	GetZabbixScripts,
+	GetZabbixHosts,
+	GetZabbixHostGroups,
+	GetZabbixTemplates,
+	GetZabbixProblems
+};

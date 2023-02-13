@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import type { Zabbix_UserGroup } from '../../../types/zabbix-api-interfaces';
 
+	import PageContainer from '../../../framework/containers/page.svelte';
+
 	let showUsername: string,
 		showName: string,
 		showSurname: string,
@@ -37,7 +39,7 @@
 	});
 </script>
 
-<section>
+<PageContainer>
 	<h1>Perfil de {showName}</h1>
 	<fieldset>
 		<legend>Información de usuario</legend>
@@ -53,7 +55,7 @@
 		<p>Token de Zabbix: {zabbixToken}</p>
 		<p>Cookie de Sesión: {cookie}</p>
 	</fieldset>
-</section>
+</PageContainer>
 
 <style>
 	* {

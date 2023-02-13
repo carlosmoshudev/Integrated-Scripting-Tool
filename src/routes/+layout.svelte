@@ -1,14 +1,14 @@
 <script lang="ts">
-	import MainLayoutHeader from '../components/layout/main-layout-header.svelte';
-	import { headerLinks } from '../models/header';
+	import MainLayoutHeader from '../components/header/header.svelte';
+	import { HeaderLinkCollection } from './data';
+
 	import '../styles/root.css';
-	import '../styles/fonts.css';
+	import '../styles/framework.css';
 	import '../styles/components/header.css';
-	import '../styles/framework/global.css';
 </script>
 
 <header>
-	<MainLayoutHeader navLinks={headerLinks} />
+	<MainLayoutHeader NavigationLinkCollection={HeaderLinkCollection} />
 </header>
 <main>
 	<slot />

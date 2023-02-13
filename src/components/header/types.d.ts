@@ -1,8 +1,7 @@
 export type HeaderNavLink = {
-	title: string;
-	href: string;
-	icon: string;
-	isExternal?: boolean;
+	Text: string;
+	Href: string;
+	Icon: string;
 };
 
 export type NotLoggedMenuItems = {

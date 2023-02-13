@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+	/* base */
+	--zero: 0;
+	--sizing: border-box;
+	--primary-font: 'Montserrat', sans-serif;
+	/* page */
+	--page-background-color: #3d405b;
+	--meassure: 0.5rem;
+	--title-font-size: 2rem;
+	--title-font-weight: 600;
+	--title-color: #f4f1de;
+}
+
+/* base */
+.base__formatting {
+	margin: var(--zero);
+	padding: var(--zero);
+	box-sizing: var(--sizing);
+	font-family: var(--primary-font);
+}
+
+/* page */
+.page__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: first baseline;
+	align-items: center;
+	min-height: 90vh;
+	padding: 1rem;
+}
+
+.page__container::before {
+	content: '';
+	position: fixed;
+	min-width: 95vw;
+	min-height: 85vh;
+	background-color: var(--page-background-color);
+	padding: var(--meassure);
+	border-radius: var(--meassure);
+	opacity: 0.9;
+	z-index: -1;
+}
+
+.page__container.page__title {
+	font-size: var(--title-font-size);
+	font-weight: var(--title-font-weight);
+	color: var(--title-color);
+}
+
+/* fieldset */
+.fieldset__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-width: 50%;
+}
+
+.fieldset__field {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: space-between;
+	min-width: 50%;
+	padding: 0.5rem;
+}

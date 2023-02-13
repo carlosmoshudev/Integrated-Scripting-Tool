@@ -1,13 +1,6 @@
 .main__layout__header {
 	display: flex;
-	background-image: linear-gradient(
-		to right,
-		#202891 0%,
-		#4460db 50%,
-		#2f4064 65%,
-		#202891 80%,
-		#2b0d7e 100%
-	);
+	background-color: #3d405b;
 	font-family: 'Montserrat', sans-serif;
 	justify-content: space-between;
 	align-items: center;
@@ -28,7 +21,6 @@
 
 .menu__button i {
 	font-size: 1.5rem;
-	color: #fff;
 }
 
 .top__right__menu {
@@ -39,18 +31,11 @@
 	flex-direction: row;
 	justify-content: center;
 	background-attachment: fixed;
-	background-image: linear-gradient(
-		to right,
-		#202891 0%,
-		#4460db 50%,
-		#2f4064 65%,
-		#202891 80%,
-		#2b0d7e 100%
-	);
+	background-color: #3d405b;
 	font-family: 'Montserrat', sans-serif;
 	justify-content: space-around;
 	align-items: center;
-	padding: 0.5rem 1rem 1rem 1rem;
+	padding: 1rem 1rem 1rem 1rem;
 	max-width: 400px;
 	border-radius: 0 0 0 1rem;
 }
@@ -68,7 +53,7 @@
 }
 
 .menu__links a {
-	color: #fff;
+	color: #f4f1de;
 	text-decoration: none;
 	padding: 0;
 	font-weight: 600;
@@ -91,11 +76,11 @@
 	letter-spacing: 0.05rem;
 }
 a[aria-current='page'] {
-	border-bottom: 2px solid #fff;
+	border-bottom: 2px solid #f4f1de;
 }
 .animated__underline {
 	position: relative;
-	color: #fff;
+	color: #f4f1de;
 	text-decoration: none;
 	padding: 0.5rem 0;
 }
@@ -105,7 +90,7 @@ a[aria-current='page'] {
 	position: absolute;
 	width: 100%;
 	height: 2px;
-	background: #fff;
+	background: #f4f1de;
 	bottom: 0;
 	left: 0;
 	transition: transform 0.4s ease;
