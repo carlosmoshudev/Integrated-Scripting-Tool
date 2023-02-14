@@ -1,113 +1,107 @@
-<script>
+<script lang="ts">
+	import PageContainer from '../../../components/containers/page.svelte';
 </script>
 
-<section>
-	<div class="zabbix__widget__menu base__formatting">
-		<fieldset>
-			<legend> Equipos</legend>
-			<ul>
-				<li>
-					<a href="/services/zabbix/hosts" class="animated__underline">
-						<i class="fas fa-desktop" />
-						Listado
-					</a>
-				</li>
-				<li>
-					<a href="/services/zabbix/host-groups" class="animated__underline">
-						<i class="fas fa-grip-horizontal" />
-						Grupos
-					</a>
-				</li>
-				<li>
-					<a href="/services/zabbix/templates" class="animated__underline">
-						<i class="fas fa-clone" />
-						Plantillas
-					</a>
-				</li>
-				<li>
-					<a href="/services/zabbix/applications" class="animated__underline">
-						<i class="fas fa-cubes" />
-						Aplicaciones
-					</a>
-				</li>
-				<li>
-					<a href="/services/zabbix/items" class="animated__underline">
-						<i class="fas fa-cube" />
-						Items
-					</a>
-				</li>
-			</ul>
-		</fieldset>
-		<fieldset>
-			<legend> Usuarios</legend>
-			<ul>
-				<li>
-					<a href="/services/zabbix/users" class="animated__underline">
-						<i class="fas fa-users" />
-						Usuarios
-					</a>
-				</li>
+<PageContainer Title="Zabbix">
+	<div class="subpage">
+		<div class="zabbix__widget__menu base__formatting">
+			<fieldset>
+				<legend> Equipos</legend>
+				<ul>
+					<li>
+						<a href="/services/zabbix/hosts" class="animated__underline">
+							<i class="fas fa-desktop" />
+							Listado
+						</a>
+					</li>
+					<li>
+						<a href="/services/zabbix/host-groups" class="animated__underline">
+							<i class="fas fa-grip-horizontal" />
+							Grupos
+						</a>
+					</li>
+					<li>
+						<a href="/services/zabbix/templates" class="animated__underline">
+							<i class="fas fa-clone" />
+							Plantillas
+						</a>
+					</li>
+					<li>
+						<a href="/services/zabbix/applications" class="animated__underline">
+							<i class="fas fa-cubes" />
+							Aplicaciones
+						</a>
+					</li>
+					<li>
+						<a href="/services/zabbix/items" class="animated__underline">
+							<i class="fas fa-cube" />
+							Items
+						</a>
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend> Usuarios</legend>
+				<ul>
+					<li>
+						<a href="/services/zabbix/users" class="animated__underline">
+							<i class="fas fa-users" />
+							Usuarios
+						</a>
+					</li>
 
-				<li>
-					<a href="/services/zabbix/user-groups" class="animated__underline">
-						<i class="fas fa-address-book" />
-						Grupos
-					</a>
-				</li>
+					<li>
+						<a href="/services/zabbix/user-groups" class="animated__underline">
+							<i class="fas fa-address-book" />
+							Grupos
+						</a>
+					</li>
 
-				<li>
-					<a href="/services/zabbix/roles" class="animated__underline">
-						<i class="fas fa-user-tag" />
-						Roles
-					</a>
-				</li>
-			</ul>
-		</fieldset>
-		<fieldset>
-			<legend> Control</legend>
-			<ul>
-				<li>
-					<a href="/services/zabbix/problems" class="animated__underline">
-						<i class="fas fa-exclamation-triangle" />
-						Problemas
-					</a>
-				</li>
-				<li>
-					<a href="/services/zabbix/services" class="animated__underline">
-						<i class="fas fa-server" />
-						Servicios
-					</a>
-				</li>
-				<li>
-					<a href="/services/zabbix/tasks" class="animated__underline">
-						<i class="fas fa-tasks" />
-						Tareas
-					</a>
-				</li>
-				<li>
-					<a href="/services/zabbix/scripts" class="animated__underline">
-						<i class="fas fa-code" /> Scripts
-					</a>
-				</li>
-			</ul>
-		</fieldset>
+					<li>
+						<a href="/services/zabbix/roles" class="animated__underline">
+							<i class="fas fa-user-tag" />
+							Roles
+						</a>
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend> Control</legend>
+				<ul>
+					<li>
+						<a href="/services/zabbix/problems" class="animated__underline">
+							<i class="fas fa-exclamation-triangle" />
+							Problemas
+						</a>
+					</li>
+					<li>
+						<a href="/services/zabbix/services" class="animated__underline">
+							<i class="fas fa-server" />
+							Servicios
+						</a>
+					</li>
+					<li>
+						<a href="/services/zabbix/tasks" class="animated__underline">
+							<i class="fas fa-tasks" />
+							Tareas
+						</a>
+					</li>
+					<li>
+						<a href="/services/zabbix/scripts" class="animated__underline">
+							<i class="fas fa-code" /> Scripts
+						</a>
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+		<main>
+			<slot />
+		</main>
 	</div>
-	<main>
-		<slot />
-	</main>
-</section>
+</PageContainer>
 
 <style>
-	* {
-		box-sizing: border-box;
-	}
-
-	fieldset {
-		padding: 0.2rem;
-		margin: 0.3rem 0 0.5rem 0;
-	}
-
-	section {
+	.subpage {
 		position: relative;
 		left: -1.7rem;
 		top: -1rem;
@@ -119,7 +113,7 @@
 
 	.zabbix__widget__menu {
 		position: sticky;
-		top: 3rem;
+		top: 0rem;
 		grid-area: menu;
 		background-image: linear-gradient(to right, #1e3c72, #2a5298, #3366b2);
 		padding: 10px;

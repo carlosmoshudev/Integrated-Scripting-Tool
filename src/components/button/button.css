@@ -19,11 +19,16 @@
 	margin: 1rem;
 }
 
+.button__framework:hover {
+	transform: scale(1.1);
+}
+
 .button__framework.button__color__primary {
 	background: var(--button__color__primary);
 	border: var(--button__color__primary);
 	color: var(--button__color__primary);
 }
+
 .button__framework.button__red {
 	background: var(--button__red);
 	border: var(--button__red);
