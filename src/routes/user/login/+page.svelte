@@ -1,21 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Fields, Legend, Title } from './data';
-	import { On_MountEvent, On_LoginButtonClick } from './methods';
+	import { FieldsetProps, ButtonProps, Fields, Title } from './data';
 	import { PageContainer, FieldsetContainer, Field, Button } from './components';
+	import { On_MountEvent } from './methods';
 	onMount(On_MountEvent);
 </script>
 
-<PageContainer {Title}>
-	<FieldsetContainer {Legend}>
-		{#each Fields as field}
-			<Field ID={field.ID} InputType={field.Type} Label={field.Label} />
+<PageContainer {Title} HeadTitle="Iniciar sesión">
+	<FieldsetContainer Properties={FieldsetProps}>
+		{#each Fields as FieldProps}
+			<Field Properties={FieldProps} />
 		{/each}
-		<Button
-			Label="Iniciar sesión"
-			OnClickCallback={On_LoginButtonClick}
-			ColorClass="button__yellow"
-			BorderClass="button__outline"
-		/>
+		<Button Properties={ButtonProps} />
 	</FieldsetContainer>
 </PageContainer>

@@ -21,12 +21,12 @@
 {#if menuIcon_CSS !== defaultMenuIcon_CSS}
 	<Menu_Links>
 		{#if !localStorage.getItem('token')}
-			{#each Object.entries(MenuItemCollectionOnLoggedOut) as [_Key, MenuItemLink]}
-				<Menu_Link {MenuItemLink} />
+			{#each Object.entries(MenuItemCollectionOnLoggedOut) as [_Key, Properties]}
+				<Menu_Link {Properties} />
 			{/each}
 		{:else}
-			{#each Object.entries(MenuItemCollectionOnLoggedIn) as [_Key, MenuItemLink]}
-				<Menu_Link {MenuItemLink} />
+			{#each Object.entries(MenuItemCollectionOnLoggedIn) as [_Key, Properties]}
+				<Menu_Link {Properties} />
 			{/each}
 		{/if}
 	</Menu_Links>

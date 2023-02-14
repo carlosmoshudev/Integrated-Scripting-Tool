@@ -11,3 +11,10 @@ export type Color =
 	| 'button__green'
 	| 'button__blue'
 	| 'button__purple';
+
+export interface IButtonProps {
+	Label: string;
+	BorderClass: Border = 'button__border__none';
+	ColorClass: Color = 'button__color__primary';
+	OnClickCallback: () => void;
+}

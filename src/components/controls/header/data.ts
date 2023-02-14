@@ -1,4 +1,4 @@
-import type { NotLoggedMenuItems, LoggedMenuItems } from './types';
+import type { NotLoggedMenuItems, LoggedMenuItems } from '../../../types/components/header';
 
 export const menuIconContainer_CSS = 'menu__button base__formatting';
 

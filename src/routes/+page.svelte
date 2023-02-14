@@ -1,17 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { Check_Token } from './functions';
 
-	const t = 'token';
-	const ok = '/user/profile';
-	const ko = '/user/login';
-
-	onMount(() => {
-		localStorage.getItem(t) ? href(ok) : href(ko);
-	});
-
-	function href(target: string): void {
-		location.href = target;
-	}
+	onMount(Check_Token);
 </script>
 
 <h1>Redirecting...</h1>

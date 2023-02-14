@@ -1,11 +1,11 @@
 :root {
-	--button__color__primary: #f4f1de;
-	--button__red: #ef476f;
-	--button__orange: #f78c6b;
-	--button__yellow: #ffd166;
-	--button__green: #06d6a0;
-	--button__blue: #118ab2;
-	--button__purple: #073b4c;
+	--button__color__primary: var(--light-text-primary-color);
+	--button__red: var(--red);
+	--button__orange: var(--orange);
+	--button__yellow: var(--yellow);
+	--button__green: var(--green);
+	--button__blue: var(--blue);
+	--button__dark__blue: var(--dark-blue);
 }
 
 .button__framework {
@@ -55,9 +55,9 @@
 	color: var(--button__blue);
 }
 .button__framework.button__purple {
-	background: var(--button__purple);
-	border: var(--button__purple);
-	color: var(--button__purple);
+	background: var(--button__dark__blue);
+	border: var(--button__dark__blue);
+	color: var(--button__dark__blue);
 }
 
 .button__framework.button__border__none {

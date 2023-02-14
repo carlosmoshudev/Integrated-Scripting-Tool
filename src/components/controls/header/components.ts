@@ -1,7 +1,7 @@
-import Menu_Links from './menu-links.svelte';
+import Menu_Links from '../../containers/menu-links.svelte';
 import Menu_Link from './main-menu-link.svelte';
 
-import Nav_Links from './navigation-links.svelte';
+import Nav_Links from '../../containers/navigation-links.svelte';
 import Nav_Link from './navigation-link.svelte';
 
 import Logotype from './header-logo.svelte';

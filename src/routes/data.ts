@@ -1,4 +1,4 @@
-import type { HeaderNavLink } from '../components/header/types';
+import type { HeaderNavLink, HeaderLogo } from '../types/components/header';
 
 export const HeaderLinkCollection: Array<HeaderNavLink> = [
 	{
@@ -37,3 +37,12 @@ export const HeaderLinkCollection: Array<HeaderNavLink> = [
 		Icon: 'fa-microchip'
 	}
 ];
+export const HeaderLogoProperties: HeaderLogo = {
+	Source: '/logo_white.png',
+	Alternative_Text: 'Trison Logo',
+	Href: '/'
+};
+
+export const token = 'token';
+export const profile = '/user/profile';
+export const login = '/user/login';

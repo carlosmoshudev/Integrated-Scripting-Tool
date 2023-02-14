@@ -1,14 +1,18 @@
 <script lang="ts">
-	import MainLayoutHeader from '../components/header/header.svelte';
-	import { HeaderLinkCollection } from './data';
-
+	import { MainLayoutHeader } from './components';
+	import { HeaderLinkCollection, HeaderLogoProperties } from './data';
+	import '../styles/global-vars.css';
 	import '../styles/root.css';
 	import '../styles/framework.css';
-	import '../styles/components/header.css';
 </script>
 
 <header>
-	<MainLayoutHeader NavigationLinkCollection={HeaderLinkCollection} />
+	<MainLayoutHeader
+		Properties={{
+			NavigationLinkCollection: HeaderLinkCollection,
+			LogoProperties: HeaderLogoProperties
+		}}
+	/>
 </header>
 <main>
 	<slot />
