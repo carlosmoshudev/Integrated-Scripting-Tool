@@ -21,7 +21,7 @@ export const FieldsetProps: IFieldsetProps = {
 };
 export const ButtonProps: IButtonProps = {
 	Label: 'Iniciar sesión',
-	ColorClass: 'button__yellow',
+	ColorClass: 'button__purple',
 	BorderClass: 'button__outline',
 	OnClickCallback: async () => {
 		const username = document.getElementById('user') as HTMLInputElement;
@@ -31,8 +31,8 @@ export const ButtonProps: IButtonProps = {
 		});
 	}
 };
-const Title = 'Usuario no autenticado, por favor ingrese sus credenciales';
-const HeadTitle = 'Iniciar sesión';
+const Title = 'Inicio de sesión con Zabbix';
+const HeadTitle = 'Login';
 
 export const PageProps = {
 	Title,

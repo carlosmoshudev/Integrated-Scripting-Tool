@@ -1,17 +1,23 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { FieldsetProps, ButtonProps, Fields, PageProps } from './../../../data/page-user-login';
-	import { Page, Fieldset, Input, Button } from '../../../imports/pages';
+	import { ButtonProps, PageProps } from './../../../data/page-user-login';
+	import { Page, Button, FilledTextField } from '../../../imports/pages';
 	import { OnMount_CheckLogin } from './../../../functions/pages';
+
 	const { Title, HeadTitle } = PageProps;
 	onMount(OnMount_CheckLogin);
 </script>
 
 <Page {Title} {HeadTitle}>
-	<Fieldset Properties={FieldsetProps}>
-		{#each Fields as FieldProps}
-			<Input Properties={FieldProps} />
-		{/each}
+	<div class="login__form">
+		<FilledTextField Properties={{ Label: 'Usuario', ID: 'user', Type: 'text' }} />
+		<FilledTextField Properties={{ Label: 'Contraseña', ID: 'password', Type: 'password' }} />
 		<Button Properties={ButtonProps} />
-	</Fieldset>
+	</div>
 </Page>
+
+<style lang="text/css" scoped>
+	.login__form {
+		margin: 32px auto;
+	}
+</style>

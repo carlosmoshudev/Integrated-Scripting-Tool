@@ -1,9 +1,23 @@
 {
-	"name": "tist",
-	"version": "0.0.1",
+	"name": "integrated-scripting-tool",
+	"version": "0.8.12",
+	"description": "A tool for creating and running scripts for the Integrated Scripting Engine",
+	"keywords": [
+		"zabbix",
+		"scripting",
+		"automation",
+		"tool",
+		"ipam",
+		"networking",
+		"av"
+	],
 	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/carlosmoshudev/Integrated-Scripting-Tool.git"
+	},
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -27,5 +41,12 @@
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"author": {
+		"name": "Carlos Moshu",
+		"email": "carlos@carlosmoshu.com"
+	},
+	"dependencies": {
+		"material-design-icons-iconfont": "^6.7.0"
+	}
 }

@@ -5,37 +5,37 @@ export const HeaderLinkCollection: Array<HeaderNavLink> = [
 	{
 		Text: 'Integración',
 		Href: '/services/av-api-rest',
-		Icon: 'fa-code'
+		Icon: 'view_in_ar'
 	},
 	{
 		Text: 'Zabbix',
 		Href: '/services/zabbix',
-		Icon: 'fa-server'
+		Icon: 'monitor_heart'
 	},
 	{
 		Text: 'IPAM',
 		Href: '/services/ipam',
-		Icon: 'fa-network-wired'
+		Icon: 'warehouse'
 	},
 	{
 		Text: 'APs',
 		Href: '/services/remote-aps',
-		Icon: 'fa-wifi'
+		Icon: 'wifi'
 	},
 	{
 		Text: 'Mesh Central',
 		Href: '/services/mesh-central',
-		Icon: 'fa-laptop'
+		Icon: 'settings_remote'
 	},
 	{
 		Text: 'Radius',
 		Href: '/services/radius',
-		Icon: 'fa-user'
+		Icon: 'https'
 	},
 	{
 		Text: 'Provisión',
 		Href: '/services/ztp-tools',
-		Icon: 'fa-microchip'
+		Icon: 'display_settings'
 	}
 ];
 export const HeaderLogoProperties: IHeaderLogoProps = {

@@ -3,35 +3,35 @@ import type { NotLoggedMenuItems, LoggedMenuItems } from './../types/components/
 
 export const CSS = {
 	MenuButton: 'menu__button base__formatting',
-	DefaultIcon: 'fa-bars',
-	AlternateIcon: 'fa-times'
+	DefaultIcon: 'dashboard_customize',
+	AlternateIcon: 'grid_view'
 };
 
 const LoggedMenuItems: LoggedMenuItems = {
 	logout: {
 		Text: 'Desconectarse',
 		Href: '/user/logout',
-		Icon: 'fa-sign-out-alt'
+		Icon: 'logout'
 	},
 	profile: {
 		Text: 'Mi perfil',
 		Href: '/user/profile',
-		Icon: 'fa-user'
+		Icon: 'account_box'
 	},
 	settings: {
 		Text: 'Ajustes',
 		Href: '/user/settings',
-		Icon: 'fa-cog'
+		Icon: 'settings'
 	},
 	loadScript: {
 		Text: 'Importar script',
 		Href: '/load-script',
-		Icon: 'fa-file-upload'
+		Icon: 'upload_file'
 	},
 	manageScripts: {
 		Text: 'Repositorio',
 		Href: '/manage-scripts',
-		Icon: 'fa-file-code'
+		Icon: 'folder'
 	}
 };
 
@@ -39,12 +39,12 @@ const NotLoggedMenuItems: NotLoggedMenuItems = {
 	login: {
 		Text: 'Conectarse',
 		Href: '/user/login',
-		Icon: 'fa-sign-in-alt'
+		Icon: 'login'
 	},
 	register: {
 		Text: 'Darse de alta',
 		Href: '/user/register',
-		Icon: 'fa-user-plus'
+		Icon: 'person_add'
 	}
 };
 

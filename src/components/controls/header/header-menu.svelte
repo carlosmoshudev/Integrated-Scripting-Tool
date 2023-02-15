@@ -15,7 +15,7 @@
 </script>
 
 <div class={MenuButton} on:click={Swap_MenuIcon} on:keyup={() => {}}>
-	<i class="fas {iconCss}" />
+	<i class="material-icons">{iconCss}</i>
 </div>
 {#if iconCss !== DefaultIcon}
 	<Menu_Links>
@@ -30,3 +30,7 @@
 		{/if}
 	</Menu_Links>
 {/if}
+
+<style lang="text/css" scoped>
+	@import 'material-design-icons-iconfont/dist/material-design-icons.css';
+</style>

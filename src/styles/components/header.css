@@ -1,6 +1,6 @@
 .main__layout__header {
 	display: flex;
-	background-color: #3d405b;
+	background-color: var(--blue);
 	font-family: 'Montserrat', sans-serif;
 	justify-content: space-between;
 	align-items: center;
@@ -100,6 +100,35 @@ a[aria-current='page'] {
 .animated__underline:hover::after {
 	transform: scaleX(1);
 }
+
+.navigation__link__button {
+	align-items: center;
+	border-radius: 0.2rem;
+	padding: 0.4rem 0.7rem;
+	margin: 0 0.3rem;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background-color: rgb(40, 3, 87);
+	border: 1px solid rgb(63, 50, 119);
+}
+.navigation__link__button a {
+	color: #f4f1de;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navigation__link__button:hover {
+	background-color: #f4f1de;
+}
+
+.navigation__link__button a:hover {
+	color: #3d405b;
+}
+
 li {
 	margin-right: 2rem;
 	position: relative;

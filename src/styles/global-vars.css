@@ -1,9 +1,15 @@
 :root {
-	--light-text-primary-color: #f4f1de;
 	--red: #ef476f;
 	--orange: #f78c6b;
 	--yellow: #ffd166;
 	--green: #06d6a0;
 	--blue: #118ab2;
 	--dark-blue: #073b4c;
+
+	--lighter-yellow: #f4f1de;
+	--light-orange: #eab69f;
+	--light-red: #e07a5f;
+	--darker-blue: #3d405b;
+	--light-green: #81b29a;
+	--light-yellow: #f2cc8f;
 }

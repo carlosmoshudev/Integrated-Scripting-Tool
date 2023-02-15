@@ -9,12 +9,12 @@
 	import { page } from '$app/stores';
 </script>
 
-<li>
-	<a
-		href={Href}
-		class="animated__underline"
-		aria-current={$page.url.pathname === Href ? 'page' : undefined}
-	>
-		<i class={'fas ' + Icon} />{Text}
+<li class="navigation__link__button">
+	<a href={Href} aria-current={$page.url.pathname === Href ? 'page' : undefined}>
+		<i class="material-icons">{Icon}</i>{Text}
 	</a>
 </li>
+
+<style>
+	@import 'material-design-icons-iconfont/dist/material-design-icons.css';
+</style>

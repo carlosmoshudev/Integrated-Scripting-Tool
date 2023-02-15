@@ -6,11 +6,11 @@
 	--sizing: border-box;
 	--primary-font: 'Montserrat', sans-serif;
 	/* page */
-	--page-background-color: #3d405b;
+	--page-background-color: var(--lighter-yellow);
 	--meassure: 0.5rem;
 	--title-font-size: 2rem;
 	--title-font-weight: 600;
-	--title-color: #f4f1de;
+	--title-color: var(--dark-blue);
 }
 
 /* base */

@@ -2,7 +2,7 @@
 	import PageContainer from '../../../components/containers/page.svelte';
 </script>
 
-<PageContainer Title="Zabbix">
+<PageContainer Title="Zabbix" HeadTitle="Zabbix" PageType="page__container">
 	<div class="subpage">
 		<div class="zabbix__widget__menu base__formatting">
 			<fieldset>
@@ -94,67 +94,35 @@
 				</ul>
 			</fieldset>
 		</div>
-		<main>
+		<div class="container">
 			<slot />
-		</main>
+		</div>
 	</div>
 </PageContainer>
 
 <style>
+	* {
+		box-sizing: border-box;
+		color: var(--dark-blue);
+	}
 	.subpage {
 		position: relative;
-		left: -1.7rem;
-		top: -1rem;
 		display: grid;
 		grid-template-columns: 1fr 5fr;
-		grid-template-rows: 1fr;
-		grid-template-areas: 'menu main';
+		grid-template-areas: 'menu content';
+		grid-gap: 1rem;
 	}
-
 	.zabbix__widget__menu {
 		position: sticky;
-		top: 0rem;
+		top: 0;
+		left: 0;
 		grid-area: menu;
-		background-image: linear-gradient(to right, #1e3c72, #2a5298, #3366b2);
-		padding: 10px;
-		font-weight: 600;
-		max-height: 100vh;
+		overflow: scroll;
 	}
+	.container {
+		position: relative;
 
-	.zabbix__widget__menu ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.zabbix__widget__menu li {
-		padding: 0.5rem;
-	}
-
-	.zabbix__widget__menu li a {
-		text-decoration: none;
-		color: #ffffffcc;
-	}
-
-	.zabbix__widget__menu li a:hover {
-		color: #ffffff;
-	}
-
-	.zabbix__widget__menu li a i {
-		font-size: 1rem;
-	}
-
-	main {
-		grid-area: main;
-	}
-
-	main > * {
-		padding: 20px;
-	}
-
-	@media (max-width: 768px) {
-		.zabbix__widget__menu {
-			display: none;
-		}
+		overflow-y: scroll;
+		grid-area: content;
 	}
 </style>

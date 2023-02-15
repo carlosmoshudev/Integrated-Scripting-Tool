@@ -9,7 +9,11 @@
 
 <li>
 	<a href={Href} class="animated__underline">
-		<i class="fas {Icon}" />
+		<i class="material-icons">{Icon}</i>
 		{Text}
 	</a>
 </li>
+
+<style>
+	@import 'material-design-icons-iconfont/dist/material-design-icons.css';
+</style>

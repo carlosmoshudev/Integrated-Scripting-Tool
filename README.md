@@ -30,7 +30,7 @@ Vendor's Open APIs
 
 ## About this package
 
-![TIST](https://img.shields.io/badge/TIST-0.0.1-yellowgreen?logo=read-the-docs)
+![TIST](https://img.shields.io/badge/TIST-0.8.12-yellowgreen?logo=read-the-docs)
 
 ### Dependencies
 

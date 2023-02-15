@@ -9,10 +9,19 @@
 	<title>TIST - {HeadTitle}</title>
 </svelte:head>
 
-<section class="base__formatting {PageType}">
-	<h2 class="page__title">{Title}</h2>
-	<slot />
-</section>
+{#if PageType === 'page__container'}
+	<section class="page__container base__formatting">
+		<h2 class="page__title">{Title}</h2>
+		<slot />
+	</section>
+{:else}
+	<section class="base__formatting page__split__container">
+		<h2 class="page__title">{Title}</h2>
+		<div class={PageType}>
+			<slot />
+		</div>
+	</section>
+{/if}
 
 <style lang="css" scoped>
 	@import '../../styles/components/page.css';

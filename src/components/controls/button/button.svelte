@@ -7,9 +7,11 @@
 	import type { IButtonProps } from './../../../types/components/button';
 </script>
 
-<button class="button__framework {BorderClass} {ColorClass}" on:click={OnClickCallback}>
-	{Label}
-</button>
+<div class="button__container">
+	<button class="button__framework {BorderClass} {ColorClass}" on:click={OnClickCallback}>
+		{Label}
+	</button>
+</div>
 
 <style lang="text/css" scoped>
 	@import './../../../styles/components/button.css';
