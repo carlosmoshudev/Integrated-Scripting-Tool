@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { MainLayoutHeader } from './components';
-	import { HeaderLinkCollection, HeaderLogoProperties } from './data';
+	import { MainLayoutHeader } from './../imports/layout';
+	import { HeaderLinkCollection, HeaderLogoProperties } from './../data/layout';
 	import '../styles/global-vars.css';
 	import '../styles/root.css';
 	import '../styles/framework.css';

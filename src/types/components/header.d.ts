@@ -1,18 +1,18 @@
-export type HeaderLogo = {
+export interface IHeaderLogoProps {
 	Source: string;
 	Alternative_Text: string;
 	Href?: string | null;
-};
-export type NavLinkWithIcon = {
+}
+export interface INavLinkWithIconProps {
 	Icon: string;
 	Text: string;
 	Href: string;
-};
-export type MenuLinkWithIcon = {
+}
+export interface IMenuLinkWithIconProps {
 	Icon: string;
 	Text: string;
 	Href: string;
-};
+}
 
 export type HeaderNavLink = {
 	Text: string;
@@ -35,5 +35,5 @@ export type LoggedMenuItems = {
 
 export interface IHeaderProps {
 	NavigationLinkCollection: Array<HeaderNavLink>;
-	LogoProperties: HeaderLogo;
+	LogoProperties: IHeaderLogoProps;
 }

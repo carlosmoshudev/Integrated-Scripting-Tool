@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { FieldsetProps, ButtonProps, Fields, Title } from './data';
-	import { PageContainer, FieldsetContainer, Field, Button } from './components';
-	import { On_MountEvent } from './methods';
-	onMount(On_MountEvent);
+	import { FieldsetProps, ButtonProps, Fields, PageProps } from './../../../data/page-user-login';
+	import { Page, Fieldset, Input, Button } from '../../../imports/pages';
+	import { OnMount_CheckLogin } from './../../../functions/pages';
+	const { Title, HeadTitle } = PageProps;
+	onMount(OnMount_CheckLogin);
 </script>
 
-<PageContainer {Title} HeadTitle="Iniciar sesión">
-	<FieldsetContainer Properties={FieldsetProps}>
+<Page {Title} {HeadTitle}>
+	<Fieldset Properties={FieldsetProps}>
 		{#each Fields as FieldProps}
-			<Field Properties={FieldProps} />
+			<Input Properties={FieldProps} />
 		{/each}
 		<Button Properties={ButtonProps} />
-	</FieldsetContainer>
-</PageContainer>
+	</Fieldset>
+</Page>

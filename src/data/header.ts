@@ -1,11 +1,13 @@
-import type { NotLoggedMenuItems, LoggedMenuItems } from '../../../types/components/header';
+// Path: src\data\header.ts
+import type { NotLoggedMenuItems, LoggedMenuItems } from './../types/components/header';
 
-export const menuIconContainer_CSS = 'menu__button base__formatting';
+export const CSS = {
+	MenuButton: 'menu__button base__formatting',
+	DefaultIcon: 'fa-bars',
+	AlternateIcon: 'fa-times'
+};
 
-export const defaultMenuIcon_CSS = 'fa-bars';
-export const alternateMenuIcon_CSS = 'fa-times';
-
-export const MenuItemCollectionOnLoggedIn: LoggedMenuItems = {
+const LoggedMenuItems: LoggedMenuItems = {
 	logout: {
 		Text: 'Desconectarse',
 		Href: '/user/logout',
@@ -33,7 +35,7 @@ export const MenuItemCollectionOnLoggedIn: LoggedMenuItems = {
 	}
 };
 
-export const MenuItemCollectionOnLoggedOut: NotLoggedMenuItems = {
+const NotLoggedMenuItems: NotLoggedMenuItems = {
 	login: {
 		Text: 'Conectarse',
 		Href: '/user/login',
@@ -44,4 +46,9 @@ export const MenuItemCollectionOnLoggedOut: NotLoggedMenuItems = {
 		Href: '/user/register',
 		Icon: 'fa-user-plus'
 	}
+};
+
+export const Collections = {
+	LoggedMenuItems,
+	NotLoggedMenuItems
 };

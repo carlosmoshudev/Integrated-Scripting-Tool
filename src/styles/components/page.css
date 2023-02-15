@@ -1,0 +1,27 @@
+.page__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: first baseline;
+	align-items: center;
+	min-height: 80vh;
+	padding: 1rem;
+}
+
+.page__container::before {
+	content: '';
+	position: fixed;
+	min-width: 95vw;
+	min-height: 85vh;
+	background-color: var(--page-background-color);
+	padding: var(--meassure);
+	border-radius: var(--meassure);
+	opacity: 0.9;
+	z-index: -1;
+	filter: drop-shadow(0.2rem 0.2rem var(--meassure) #e6d8d4);
+}
+
+.page__title {
+	font-size: var(--title-font-size);
+	font-weight: var(--title-font-weight);
+	color: var(--title-color);
+}

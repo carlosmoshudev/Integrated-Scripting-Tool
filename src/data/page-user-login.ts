@@ -1,6 +1,7 @@
-import type { IFieldsetProps } from '../../../types/components/fieldset';
-import type { IButtonProps } from '../../../types/components/button';
-import { TryLogin } from '../../../services/login';
+// Path: src\data\page-user-login.ts
+import type { IFieldsetProps } from '../types/components/fieldset';
+import type { IButtonProps } from '../types/components/button';
+import { TryLogin } from '../services/login';
 
 export const Fields = [
 	{
@@ -30,4 +31,10 @@ export const ButtonProps: IButtonProps = {
 		});
 	}
 };
-export const Title = 'Usuario no autenticado, por favor ingrese sus credenciales';
+const Title = 'Usuario no autenticado, por favor ingrese sus credenciales';
+const HeadTitle = 'Iniciar sesión';
+
+export const PageProps = {
+	Title,
+	HeadTitle
+};

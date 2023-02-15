@@ -153,11 +153,6 @@
 	}
 
 	@media (max-width: 768px) {
-		section {
-			display: flex;
-			flex-direction: column;
-		}
-
 		.zabbix__widget__menu {
 			display: none;
 		}

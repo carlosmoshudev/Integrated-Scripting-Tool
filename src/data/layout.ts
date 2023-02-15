@@ -1,4 +1,5 @@
-import type { HeaderNavLink, HeaderLogo } from '../types/components/header';
+// Path: src\data\layout.ts
+import type { HeaderNavLink, IHeaderLogoProps } from '../types/components/header';
 
 export const HeaderLinkCollection: Array<HeaderNavLink> = [
 	{
@@ -37,7 +38,7 @@ export const HeaderLinkCollection: Array<HeaderNavLink> = [
 		Icon: 'fa-microchip'
 	}
 ];
-export const HeaderLogoProperties: HeaderLogo = {
+export const HeaderLogoProperties: IHeaderLogoProps = {
 	Source: '/logo_white.png',
 	Alternative_Text: 'Trison Logo',
 	Href: '/'

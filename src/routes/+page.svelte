@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Check_Token } from './functions';
+	import { Check_Token } from '../functions/pages';
 
 	onMount(Check_Token);
 </script>
 
-<h1>Redirecting...</h1>
+<h6>Redirecting...</h6>
